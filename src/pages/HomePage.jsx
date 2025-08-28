@@ -2,6 +2,7 @@ import FeaturesSection from "../sections/FeaturesSection"
 import HeroSection from "../sections/HeroSection"
 import LogoCarousel from "../sections/LogoCarousel"
 import Pricing from "../sections/Pricing"
+import Testimonials from "../sections/Testimonials"
 
 
 const HomePage = () => {
@@ -11,6 +12,7 @@ const HomePage = () => {
       <LogoCarousel />
       <FeaturesSection />
       <Pricing />
+      <Testimonials />
     </div>
   )
 }
