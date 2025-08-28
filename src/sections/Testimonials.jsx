@@ -19,7 +19,7 @@ const Testimonials = () => {
         {/* Marquee */}
         <div className='relative flex flex-col antialiased'>
           <div className='relative flex overflow-hidden py-4'>
-            <div className='min-w-full shrink-0 items-stretch gap-8'>
+            <div className='flex min-w-full shrink-0 items-stretch gap-8'>
               {testimonials.map((testimonial, index) => (
                 <div key={index} className="w-[400px] cursor-pointer shrink-0 bg-black/40 backdrop-blur-xl border-white/5 hover:border-white/10 transition-all duration-300 p-8 border-2 rounded-xl"
                 >
@@ -28,6 +28,7 @@ const Testimonials = () => {
                       <img 
                         src={testimonial.image} 
                         alt="image" 
+                        className='w-full h-full object-cover'
                       />
                       {!testimonial.image && testimonial.name[0]}
                     </div>
@@ -40,12 +41,10 @@ const Testimonials = () => {
                         {testimonial.role}
                       </p>
                     </div>
-
-                    <p className='text-white/70 text-sm leading-relaxed'>
-                      {testimonial.content}
-                    </p>
-
                   </div>
+                  <p className='text-white/70 text-sm leading-relaxed'>
+                    {testimonial.content}
+                  </p>
                 </div>
               ))}
             </div>
