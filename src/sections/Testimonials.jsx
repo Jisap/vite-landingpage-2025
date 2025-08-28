@@ -17,26 +17,31 @@ const Testimonials = () => {
         </div>
 
         {/* Marquee */}
-        <div>
-          <div>
-            <div>
+        <div className='relative flex flex-col antialiased'>
+          <div className='relative flex overflow-hidden py-4'>
+            <div className='min-w-full shrink-0 items-stretch gap-8'>
               {testimonials.map((testimonial, index) => (
-                <div key={index}>
-                  <div>
-                    <div>
-                      <img src="" alt="" />
+                <div key={index} className="w-[400px] cursor-pointer shrink-0 bg-black/40 backdrop-blur-xl border-white/5 hover:border-white/10 transition-all duration-300 p-8 border-2 rounded-xl"
+                >
+                  <div className='centered-row gap-4 mb-6'>
+                    <div className='h-12 w-12 overflow-clip rounded-full text-xl center-item text-center bg-pink-500'>
+                      <img 
+                        src={testimonial.image} 
+                        alt="image" 
+                      />
+                      {!testimonial.image && testimonial.name[0]}
                     </div>
 
                     <div>
-                      <h4>
+                      <h4 className='font-medium text-lg clash-display text-white/90'>
                         {testimonial.name}
                       </h4>
-                      <p>
+                      <p className='text-sm text-white/60'>
                         {testimonial.role}
                       </p>
                     </div>
 
-                    <p>
+                    <p className='text-white/70 text-sm leading-relaxed'>
                       {testimonial.content}
                     </p>
 
