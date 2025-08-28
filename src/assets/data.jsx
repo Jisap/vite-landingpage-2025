@@ -98,4 +98,48 @@ const footerLinks = [
   },
 ];
 
-export { footerLinks, testimonials, features };
+const pricingData = [
+  {
+    _id: "tier-1",
+    name: "Starter",
+    price: "$49",
+    description: "For individual traders getting started in the forex market.",
+    features: [
+      "Basic trading tools",
+      "Real-time market data",
+      "Standard support",
+      "Up to $10k trading volume",
+    ],
+    isPopular: false,
+  },
+  {
+    _id: "tier-2",
+    name: "Professional",
+    price: "$99",
+    description:
+      "For experienced traders who need advanced tools and analytics.",
+    features: [
+      "Advanced trading interface",
+      "Portfolio management",
+      "Priority support",
+      "API Access",
+      "Up to $100k trading volume",
+    ],
+    isPopular: true,
+  },
+  {
+    _id: "tier-3",
+    name: "Institutional",
+    price: "Custom",
+    description: "Tailored solutions for funds and institutional clients.",
+    features: [
+      "All Professional features",
+      "Dedicated account manager",
+      "Custom integrations",
+      "Unlimited trading volume",
+    ],
+    isPopular: false,
+  },
+];
+
+export { footerLinks, testimonials, features, pricingData };

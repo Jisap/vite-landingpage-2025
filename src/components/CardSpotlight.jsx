@@ -25,7 +25,9 @@ export const CardSpotlight = ({ children, className = "" }) => {
     const rect = div.getBoundingClientRect();                   // Obtiene el rectángulo delimitador del div para conocer su posición y tamaño.
 
     
-    
+    // e proviene del evento
+    // que el navegador pasa a la 
+    // función handleMouseMove
     setPosition({                                               // Actualiza el estado de la posición con las coordenadas del cliente (ratón)
       x: e.clientX - rect.left,                                 // relativas a la esquina superior izquierda del div.
       y: e.clientY - rect.top,

@@ -1,4 +1,5 @@
-import React from 'react'
+import { pricingData } from "../assets/data"
+import PricingTier from "../components/PricingTier"
 
 const Pricing = () => {
   return (
@@ -16,7 +17,17 @@ const Pricing = () => {
 
       {/* Subscription Cards */}
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto'>
-        
+        {pricingData.map(({_id, isPopular, name, description, features, price}) => (
+          <PricingTier 
+            key={_id}
+            isPopular={isPopular}
+            name={name}
+            description={description}
+            features={features}
+            price={price}
+
+          />
+        ))}
       </div>
     </section>
   )
