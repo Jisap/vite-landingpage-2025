@@ -3,15 +3,15 @@ import { testimonials } from '../assets/data'
 
 const Testimonials = () => {
   return (
-    <section>
-      <div>
+    <section className='py-20 overflow-hidden'>
+      <div className='container mx-auto px-4'>
       {/* Title */}
-        <div>
-          <h2>
+        <div className='text-center mb-16'>
+          <h2 className='text-5xl font-normal mb-4 clash-display'>
             Trusted by Traders
           </h2>
 
-          <p>
+          <p className='text-zinc-400/90 text-lg'>
             Jin thousands of satisfied traders on ForexTrade
           </p>
         </div>
