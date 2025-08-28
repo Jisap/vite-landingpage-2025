@@ -25,12 +25,13 @@ const Testimonials = () => {
                 >
                   <div className='centered-row gap-4 mb-6'>
                     <div className='h-12 w-12 overflow-clip rounded-full text-xl center-item text-center bg-pink-500'>
-                      <img 
-                        src={testimonial.image} 
-                        alt="image" 
-                        className='w-full h-full object-cover'
-                      />
-                      {!testimonial.image && testimonial.name[0]}
+                      {!testimonial.image ? (testimonial.name[0]) : (
+                        <img 
+                          src={testimonial.image} 
+                          alt="image" 
+                          className='w-full h-full object-cover'
+                        />
+                      ) }
                     </div>
 
                     <div>
