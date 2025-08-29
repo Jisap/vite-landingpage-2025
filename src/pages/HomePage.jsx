@@ -1,3 +1,4 @@
+import CtaSection from "../sections/ctaSection"
 import FeaturesSection from "../sections/FeaturesSection"
 import HeroSection from "../sections/HeroSection"
 import LogoCarousel from "../sections/LogoCarousel"
@@ -13,6 +14,7 @@ const HomePage = () => {
       <FeaturesSection />
       <Pricing />
       <Testimonials />
+      <CtaSection />
     </div>
   )
 }
