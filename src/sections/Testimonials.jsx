@@ -1,7 +1,22 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { testimonials } from '../assets/data'
 
 const Testimonials = () => {
+
+  const marqueeRef = useRef(null);
+  const handleMouseEnter = () => {
+    if(marqueeRef.current) {
+      marqueeRef.current.style.setProperty("--marquee-play-state", "paused")
+    }
+  }
+
+  const handleMouseleave = () => {
+    if(marqueeRef.current) {
+      marqueeRef.current.style.setProperty("--marquee-play-state", "running")
+    }
+  }
+
+
   return (
     <section className='py-20 overflow-hidden'>
       <div className='container mx-auto px-4'>
@@ -18,11 +33,20 @@ const Testimonials = () => {
 
         {/* Marquee */}
         <div className='relative flex flex-col antialiased'>
-          <div className='relative flex overflow-hidden py-4'>
+          <div className='relative flex overflow-hidden py-4' ref={marqueeRef}>
             {/* moving part */}
-            <div className='animate-marquee flex min-w-full shrink-0 items-stretch gap-8'>
+            <div 
+              className='animate-marquee flex min-w-full shrink-0 items-stretch gap-8'
+              style={{
+                animationPlayState: "var(--marquee-play-state)"
+              }}
+            >
               {testimonials.map((testimonial, index) => (
-                <div key={index} className="w-[400px] cursor-pointer shrink-0 bg-black/40 backdrop-blur-xl border-white/5 hover:border-white/10 transition-all duration-300 p-8 border-2 rounded-xl"
+                <div 
+                  key={index} 
+                  className="w-[400px] cursor-pointer shrink-0 bg-black/40 backdrop-blur-xl border-white/5 hover:border-white/10 transition-all duration-300 p-8 border-2 rounded-xl"
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseleave}
                 >
                   <div className='centered-row gap-4 mb-6'>
                     <div className='h-12 w-12 overflow-clip rounded-full text-xl center-item text-center bg-pink-500'>
@@ -52,9 +76,18 @@ const Testimonials = () => {
             </div>
 
             {/* Duplicate moving part for marquee effect */}
-            <div className='animate-marquee flex min-w-full shrink-0 items-stretch gap-8'>
+            <div 
+              className='animate-marquee flex min-w-full shrink-0 items-stretch gap-8'
+              style={{
+                animationPlayState: "var(--marquee-play-state)"
+              }}  
+            >
               {testimonials.map((testimonial, index) => (
-                <div key={index} className="w-[400px] cursor-pointer shrink-0 bg-black/40 backdrop-blur-xl border-white/5 hover:border-white/10 transition-all duration-300 p-8 border-2 rounded-xl"
+                <div 
+                  key={index} 
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseleave}
+                  className="w-[400px] cursor-pointer shrink-0 bg-black/40 backdrop-blur-xl border-white/5 hover:border-white/10 transition-all duration-300 p-8 border-2 rounded-xl"
                 >
                   <div className='centered-row gap-4 mb-6'>
                     <div className='h-12 w-12 overflow-clip rounded-full text-xl center-item text-center bg-pink-500'>
