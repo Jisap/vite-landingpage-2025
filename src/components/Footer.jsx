@@ -1,6 +1,8 @@
 import { Command, Facebook, Instagram, Linkedin } from "lucide-react";
 
 import { footerLinks } from "../assets/data.jsx";
+import { BsInstagram } from "react-icons/bs";
+import { FaFacebook, FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -21,13 +23,13 @@ const Footer = () => {
               </p>
               <div className="flex space-x-4">
                 <button variant="ghost" size="icon">
-                  <Instagram className="w-6 h-6" />
+                  <BsInstagram className="w-6 h-6" />
                 </button>
                 <button variant="ghost" size="icon">
-                  <Facebook className="w-6 h-6" />
+                  <FaFacebook className="w-6 h-6" />
                 </button>
                 <button variant="ghost" size="icon">
-                  <Linkedin className="w-6 h-6" />
+                  <FaLinkedin className="w-6 h-6" />
                 </button>
               </div>
             </div>
