@@ -82,8 +82,12 @@ const Testimonials = () => {
                 </div>
               ))}
             </div>
-
           </div>
+
+          <div className='absolute h-full w-20 md:w-50 bg-gradient-to-r from-black to transparent -left-1'></div>
+          <div className='absolute h-full w-20 md:w-50 bg-gradient-to-l from-black to transparent -right-1'></div>
+         
+
         </div>
       </div>
     </section>
